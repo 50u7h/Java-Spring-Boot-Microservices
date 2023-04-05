@@ -18,14 +18,19 @@ public class UserResource {
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
-        
+
         return service.getUsers();
     }
 
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable int id) {
+        User user = service.findUser(id);
 
-        return service.findUser(id);
+        if (user == null) {
+            throw new UserNotFoundException("id: " + id);
+        }
+
+        return user;
     }
 
     @PostMapping("/users")
