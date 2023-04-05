@@ -18,12 +18,13 @@ public class UserDaoService {
         users.add(new User(3, "zxcvb ZCVBN", LocalDate.now().minusYears(20)));
     }
 
-    public static List<User> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    /*public User findUser(int id) {
+    public User findUser(int id) {
         Predicate<? super User> predicate = user -> user.getId().equals(id);
+
         return users.stream().filter(predicate).findFirst().get();
-    }*/
+    }
 }
