@@ -2,6 +2,7 @@ package com.guney.rest.webservices.restfulwebservices.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Post {
@@ -9,6 +10,8 @@ public class Post {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @Size(min = 5)
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
