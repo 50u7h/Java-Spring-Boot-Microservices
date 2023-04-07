@@ -2,7 +2,7 @@ package com.guney.microservices.currencyconversionservice;
 
 import java.math.BigDecimal;
 
-public class CurrencyConversionBean {
+public class CurrencyConversion {
     private Long id;
     private String from;
     private String to;
@@ -10,13 +10,14 @@ public class CurrencyConversionBean {
     private BigDecimal quantity;
     private BigDecimal totalCalculatedAmount;
     private int port;
+    private String environment;
 
-    public CurrencyConversionBean() {
+    public CurrencyConversion() {
 
     }
 
-    public CurrencyConversionBean(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-                                  BigDecimal totalCalculatedAmount, int port) {
+    public CurrencyConversion(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
+                              BigDecimal totalCalculatedAmount, int port) {
         super();
         this.id = id;
         this.from = from;
@@ -83,4 +84,11 @@ public class CurrencyConversionBean {
         this.port = port;
     }
 
+    public String getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
 }
