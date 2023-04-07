@@ -20,7 +20,8 @@ public class CurrencyExchangeController {
     public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
 
         ExchangeValue exchangeValue = new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65));
-        exchangeValue.setPort(Integer.parseInt(Objects.requireNonNull(environment.getProperty("local.server.port"))));
+        exchangeValue.setPort(
+                Integer.parseInt(environment.getProperty("local.server.port")));
         return exchangeValue;
     }
 }
