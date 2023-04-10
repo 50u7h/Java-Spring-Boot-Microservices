@@ -19,10 +19,6 @@ public class CurrencyConversionController {
                                               @PathVariable String to,
                                               @PathVariable BigDecimal quantity) {
 
-        return new CurrencyConversion(10001L, from, to, quantity, BigDecimal.ONE, BigDecimal.ONE, "");
-
-
-        /*
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("from", from);
         uriVariables.put("to", to);
@@ -35,7 +31,7 @@ public class CurrencyConversionController {
 
         assert response != null;
         return new CurrencyConversion(response.getId(), from, to, response.getConversionMultiple(), quantity,
-                quantity.multiply(response.getConversionMultiple()), response.getPort());*/
+                quantity.multiply(response.getConversionMultiple()), response.getEnvironment());
     }
 
     /*@GetMapping("/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}")
