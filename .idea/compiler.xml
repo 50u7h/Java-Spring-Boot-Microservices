@@ -8,13 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="restful-web-services" />
         <module name="currency-exchange-service" />
+        <module name="currency-conversion-service" />
         <module name="limits-service" />
         <module name="spring-cloud-config-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="currency-conversion-service" target="20" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
