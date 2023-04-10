@@ -1,15 +1,15 @@
 package com.guney.microservices.limitsservice.bean;
 
-public class LimitConfiguration {
+public class Limits {
     private int maximum;
     private int minimum;
 
-    public LimitConfiguration(int maximum, int minimum) {
+    public Limits(int maximum, int minimum) {
         this.maximum = maximum;
         this.minimum = minimum;
     }
 
-    protected LimitConfiguration() {
+    protected Limits() {
     }
 
     public int getMaximum() {
