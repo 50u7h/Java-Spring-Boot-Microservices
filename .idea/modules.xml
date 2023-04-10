@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Spring-Boot-Microservices.iml" filepath="$PROJECT_DIR$/.idea/Java-Spring-Boot-Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restful-web-services/restful-web-services.iml" filepath="$PROJECT_DIR$/restful-web-services/restful-web-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/microservices/spring-cloud-config-server/spring-cloud-config-server.iml" />
     </modules>
   </component>
 </project>
