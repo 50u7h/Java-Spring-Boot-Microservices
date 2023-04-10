@@ -14,6 +14,9 @@ import java.util.Map;
 @RestController
 public class CurrencyConversionController {
 
+    @Autowired
+    private CurrencyExchangeProxy proxy;
+
     @GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion convertCurrency(@PathVariable String from,
                                               @PathVariable String to,
@@ -30,11 +33,11 @@ public class CurrencyConversionController {
         CurrencyConversion response = responseEntity.getBody();
 
         assert response != null;
-        return new CurrencyConversion(response.getId(), from, to, response.getConversionMultiple(), quantity,
+        return new CurrencyConversion(response.getId(), from, to, quantity, response.getConversionMultiple(),
                 quantity.multiply(response.getConversionMultiple()), response.getEnvironment());
     }
 
-    /*@GetMapping("/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}")
+    @GetMapping("/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion calculateCurrencyConversionFeign(
             @PathVariable String from,
             @PathVariable String to,
@@ -48,5 +51,5 @@ public class CurrencyConversionController {
                 quantity.multiply(currencyConversion.getConversionMultiple()),
                 currencyConversion.getEnvironment() + " " + "feign");
 
-    }*/
+    }
 }
